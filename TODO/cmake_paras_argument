@@ -1,0 +1,18 @@
+# 提供公共的基类方法 -> todo 在完善此处的例程  >  在function再讲解
+#不同的参数传递方式 -> 太麻烦了。 完全无法理解和记忆。。
+macro(my_parse)
+    cmake_parse_arguments(
+        "MY"#前缀
+        "LOG; FILE"#option
+        "BIN;LIBRARY"#单值
+        "TARGETS"#多值
+        "${ARGN}"#参数数组
+    )
+    message("MY_LOG  = ${MY_LOG}")
+    message("MY_FILE = ${MY_FILE}")
+    message("MY_BIN = ${MY_BIN}")
+    message("MY_LIB = ${MY_LIB}")
+endmacro()
+my_parse(LOG
+         BIN "mybin"
+         TARGETS "tar1" "tar2")

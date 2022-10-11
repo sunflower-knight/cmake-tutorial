@@ -1,0 +1,2 @@
+add_library(clock INTERFACE)
+target_include_directories(clock INTERFACE include)
