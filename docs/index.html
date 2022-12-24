@@ -30,79 +30,79 @@
         // 如果使用的是 Nginx 部署的项目，一定要加上下面的配置，否则在非首页刷新会找不到页面 // try_files $uri $uri/ /index.html;
         basePath: '/', //文档加载的根路径，可以是二级路径或者是其他域名的路径。
         coverpage: true, //使用封面
-        onlyCover: true,//封面不能往下滑
-        auto2top: true,     // 切换页面后是否自动跳转到页面顶部
+        // onlyCover: true,//封面不能往下滑
+        // auto2top: true,     // 切换页面后是否自动跳转到页面顶部
         loadSidebar: true, //加载左侧的侧边栏
         // autoHeader: true, //可以根据 _sidebar.md 的内容自动为每个页面增加标题
-        maxLevel: 4,  //标题等级 渲染目录限制
-        subMaxLevel: 2,// 自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能
+        // maxLevel: 4,  //标题等级 渲染目录限制
+        // subMaxLevel: 2,// 自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能
         loadNavbar: true,//加载上面的导航栏
-        mergeNavbar: true,    // 小屏设备下合并导航栏到侧边栏
-        // logo: '/assets/img/pen.png',  //和name有冲突 在侧边栏中出现的网站图标，你可以使用CSS来更改大小
+        // mergeNavbar: true,    // 小屏设备下合并导航栏到侧边栏
+        // // logo: '/assets/img/pen.png',  //和name有冲突 在侧边栏中出现的网站图标，你可以使用CSS来更改大小
         name: 'Modern CMake tutorial', //文档标题，会显示在侧边栏顶部。可包含自定义 HTML 代码来方便地定制。
-        // 按照所在切换 点击name时 跳转的链接
-        nameLink: {
-            '/zh-cn/': '/zh-cn/get_start.md',
-            '/en-us/': '/en-us/get_start.md',
+        // // 按照所在切换 点击name时 跳转的链接
+        // nameLink: {
+        //     '/zh-cn/': '/zh-cn/get_start.md',
+        //     '/en-us/': '/en-us/get_start.md',
         },
-        //左上角的搜索
-        search: {
-            paths: 'auto',
-            placeholder: '🔍 Type to search',
-            noData: '😒 No result',
-            // Headline depth, 1 - 6
-            depth: 6,
-            hideOtherSidebarContent: false,
-            maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-        },
+        // //左上角的搜索
+        // search: {
+        //     paths: 'auto',
+        //     placeholder: '🔍 Type to search',
+        //     noData: '😒 No result',
+        //     // Headline depth, 1 - 6
+        //     depth: 6,
+        //     hideOtherSidebarContent: false,
+        //     maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        // },
         //上层顶栏
         // topBanner: {
         //     content: "asd"
         // },
         // 页脚
-        footer: {
-            copy: '<span>Copyright &copy; 2022 &nbsp 🌻 &nbsp</span>',
-            auth: ' <strong><a href="https://space.bilibili.com/475714100?spm_id_from=333.1007.0.0" target="_blank">向日葵骑士</a></strong>',
-            pre: '<hr/>',
-            style: 'font-size: 18px; text-align: center;',
-        },
+        // footer: {
+        //     copy: '<span>Copyright &copy; 2022 &nbsp 🌻 &nbsp</span>',
+        //     auth: ' <strong><a href="https://space.bilibili.com/475714100?spm_id_from=333.1007.0.0" target="_blank">向日葵骑士</a></strong>',
+        //     pre: '<hr/>',
+        //     style: 'font-size: 18px; text-align: center;',
+        // },
         // 设置之后，点击侧栏的二级标题之后，页面的标题不会距离顶部太近。
-        topMargin: 20, // default: 0 // 让你的内容页在滚动到指定的锚点时，距离页面顶部有一定空间。
+        // topMargin: 20, // default: 0 // 让你的内容页在滚动到指定的锚点时，距离页面顶部有一定空间。
         //代码复制
-        copyCode: {
-            buttonText: 'Copy',
-            errorText: 'Error',
-            successText: 'OK!'
-        },
-        pagination: {
-            previousText:
-                {
-                    '/en-us/': 'pre',
-                    '/zh-cn/': '上一章'
-                },
-            nextText: {
-                '/en-us/': 'next',
-                '/zh-cn/': '下一章'
-            },
-            crossChapter: true,
-            crossChapterText: true,
-        },
-        // 让你的内容页在滚动到指定的锚点时，距离页面顶部有一定空间。
-        topMargin: 25, // default: 0 //不知道什么效果 前后看不出差异
-        // 阅读进度条
-        progress: {
-            position: "top",
-            color: "var(--theme-color,#42b983)",
-            height: "3px",
-        },
-        // 字数统计
-        count: {
-            countable: true,
-            fontsize: '0.9em',
-            color: 'rgb(90,90,90)',
-            language: 'chinese'
-        },
-        formatUpdated: '{MM}/{DD} {HH}:{mm}', //文章的更新日期
+        // copyCode: {
+        //     buttonText: 'Copy',
+        //     errorText: 'Error',
+        //     successText: 'OK!'
+        // },
+        // pagination: {
+        //     previousText:
+        //         {
+        //             '/en-us/': 'pre',
+        //             '/zh-cn/': '上一章'
+        //         },
+        //     nextText: {
+        //         '/en-us/': 'next',
+        //         '/zh-cn/': '下一章'
+        //     },
+        //     crossChapter: true,
+        //     crossChapterText: true,
+        // },
+        // // 让你的内容页在滚动到指定的锚点时，距离页面顶部有一定空间。
+        // topMargin: 25, // default: 0 //不知道什么效果 前后看不出差异
+        // // 阅读进度条
+        // progress: {
+        //     position: "top",
+        //     color: "var(--theme-color,#42b983)",
+        //     height: "3px",
+        // },
+        // // 字数统计
+        // count: {
+        //     countable: true,
+        //     fontsize: '0.9em',
+        //     color: 'rgb(90,90,90)',
+        //     language: 'chinese'
+        // },
+        // formatUpdated: '{MM}/{DD} {HH}:{mm}', //文章的更新日期
 
     }
 </script>
