@@ -2,160 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CMake tutorial</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <!-- 网站描述+关键字+作者 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <meta name="description" content="Modern CMake tutorial ">
-  <!--    <meta name="keywords" content="cmake,c++,tutorial">-->
-  <!--    <meta name="author" content="sunflower-knight">-->
-  <!-- 网站主题 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <!--- 网站图标 -->
-  <!--    <link rel="shortcut icon" href="/assets/img/pen.png">-->
-  <!-- alert  弹窗-->
-  <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" type='text/css'    media='all' /> -->
-  <!-- 顶上的横幅 -->
-  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-top-banner-plugin@latest/dist/style.css" /> -->
+  <title>Markdown Preview Enhanced</title>
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 </head>
-
 <body>
-<div id="app">🌻Loading...</div> <!-- 加载栏显示 -->
+<div id="app"></div>
+</body>
 <script>
     window.$docsify = {
-        name: 'Modern CMake tutorial', //文档标题，会显示在侧边栏顶部。可包含自定义 HTML 代码来方便地定制。
-        // 按照所在切换 点击name时 跳转的链接
-        nameLink: {
-            '/zh-cn/': '/zh-cn/get_start.md',
-            '/en-us/': '/en-us/get_start.md',
-        },
-        // Github横幅
-        repo: 'https://github.com/sunflower-knight/cmake-tutorial',
-        // routerMode: 'history',//浏览器链接里不会出现 #，个人习惯
-        // 如果使用的是 Nginx 部署的项目，一定要加上下面的配置，否则在非首页刷新会找不到页面 // try_files $uri $uri/ /index.html;
-        // basePath: '/', //文档加载的根路径，可以是二级路径或者是其他域名的路径。
+        name: 'MPE',
+        repo: 'https://github.com/shd101wyy/markdown-preview-enhanced.git',
+
+        loadSidebar: true,
+        subMaxLevel: 3,
+
         coverpage: true, //使用封面
-        // onlyCover: true,//封面不能往下滑
-        auto2top: true,     // 切换页面后是否自动跳转到页面顶部
-        loadSidebar: true, //加载左侧的侧边栏
-        autoHeader: true, //可以根据 _sidebar.md 的内容自动为每个页面增加标题
-        maxLevel: 4,  //标题等级 渲染目录限制
-        subMaxLevel: 2,// 自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能
-        loadNavbar: true,//加载上面的导航栏
-        mergeNavbar: true,    // 小屏设备下合并导航栏到侧边栏
-        // logo: '/assets/img/pen.png',  //和name有冲突 在侧边栏中出现的网站图标，你可以使用CSS来更改大小
+        loadNavbar: true,
+        mergeNavbar: true,
+        // subMaxLevel: 2
 
-        //左上角的搜索
+        auto2top: true,
+
         search: {
-            paths: 'auto',
-            placeholder: '🔍 Type to search',
-            noData: '😒 No result',
-            // Headline depth, 1 - 6
-            depth: 6,
-            hideOtherSidebarContent: false,
-            maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-        },
-        // 上层顶栏
-        topBanner: {
-            content: "asd"
-        },
-        // 页脚
-        footer: {
-            copy: '<span>Copyright &copy; 2022 &nbsp 🌻 &nbsp</span>',
-            auth: ' <strong><a href="https://space.bilibili.com/475714100?spm_id_from=333.1007.0.0" target="_blank">向日葵骑士</a></strong>',
-            pre: '<hr/>',
-            style: 'font-size: 18px; text-align: center;',
-        },
-        // 设置之后，点击侧栏的二级标题之后，页面的标题不会距离顶部太近。
-        topMargin: 20, // default: 0 // 让你的内容页在滚动到指定的锚点时，距离页面顶部有一定空间。
-        // 代码复制
-        copyCode: {
-            buttonText: 'Copy',
-            errorText: 'Error',
-            successText: 'OK!'
-        },
-        pagination: {
-            previousText:
-                {
-                    '/en-us/': 'pre',
-                    '/zh-cn/': '上一章'
-                },
-            nextText: {
-                '/en-us/': 'next',
-                '/zh-cn/': '下一章'
+            noData: {
+                '/': 'No results!',
+                '/zh-cn/': '没有结果!',
+                '/zh-tw/': '沒有結果!',
             },
-            crossChapter: true,
-            crossChapterText: true,
+            paths: 'auto',
+            placeholder: {
+                '/': 'Search',
+                '/zh-cn/': '搜索',
+                '/zh-tw/': '搜索',
+            }
         },
-        // 让你的内容页在滚动到指定的锚点时，距离页面顶部有一定空间。
-        topMargin: 25, // default: 0 //不知道什么效果 前后看不出差异
-        // 阅读进度条
-        progress: {
-            position: "top",
-            color: "var(--theme-color,#42b983)",
-            height: "3px",
-        },
-        // 字数统计
-        count: {
-            countable: true,
-            fontsize: '0.9em',
-            color: 'rgb(90,90,90)',
-            language: 'chinese'
-        },
-        formatUpdated: '{MM}/{DD} {HH}:{mm}', //文章的更新日期
-
     }
 </script>
-<!-- Docsify v4 -->
-<script src="//cdn.jsdelivr.net/npm/docsify@la/lib/docsify.min.js"></script>
-<!-- 全局搜索 -->
+<script src="//cdn.jsdelivr.net/npm/docsify@latest/lib/docsify.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify@latest/lib/plugins/search.min.js"></script>
-<!-- 顶层栏目 -->
-<script src="//cdn.jsdelivr.net/npm/docsify-top-banner-plugin@latest/dist/index.js"></script>
-<!-- 页脚 -->
-<script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
-<!-- 分页导航 -->
-<script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-<!-- 代码高亮 -->
-<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-cmake.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-cpp.min.js"></script>
-<!-- 复制到剪切板 -->
-<script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-<!-- 表情符号 -->
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-<!-- 字数统计 -->
-<script src="//unpkg.com/docsify-count/dist/countable.js"></script>
-<!--  阅读的进度条 -->
-<script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
-<!-- 图片放大 -->
 <script src="//cdn.jsdelivr.net/npm/docsify@latest/lib/plugins/zoom-image.min.js"></script>
-<!-- 一个 docsify 插件：使用 pangu.js 给网页上的中文和英文、数字、符号之间添加空格 -->
-<script src="//cdn.jsdelivr.net/npm/docsify-pangu/lib/pangu.min.js"></script>
-<!-- 复制提醒 -->
-<script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
-<script>
-    document.body.oncopy = function () {
-        swal("复制成功🎉 ",
-            "若要转载或引用请务必保留原文链接，并申明来源。如果你觉得文章还不错就给他star吧 ",
-            "success");
-    };
-</script>
-<!--阅读时上方进度条-->
-<script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-ruby.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-less.min.js"></script>
 
-</body>
 </html>
-
-<!-- todo -->
-<!-- https://github.com/HerbertHe/docsify-codeblock-iframe/blob/main/README.CN.md -->
-<!-- iframe功能 -->
-<!-- 将用到的所有js使用稳定版本 -->
-<!-- https://www.npmjs.com/package/@rakutentech/docsify-code-inline
-内敛代码高亮 -->
-
-<!-- docsify-tabs -->
-<!-- 一、Google Analytics -->
-<!-- alias 没用过 xmake 的网站用了 -->
-<!-- 中文用户在搜索时不应该搜索到其他语言的东西 -->
